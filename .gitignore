@@ -1,3 +1,8 @@
 .env
 audio/.DS_Store
 output/.DS_Store
+.DS_Store
+main_modified.py
+__pycache__/openAI.cpython-310.pyc
+audio/01-RF.wav
+audio/01-testing.mp3
