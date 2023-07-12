@@ -1,8 +1,10 @@
+print("Script started")
 import os
 import time
 from dotenv import load_dotenv
 import openai
 from tqdm import tqdm
+from openAI import process_text
 
 # Load environment variables from .env file
 load_dotenv(".env")
@@ -50,6 +52,7 @@ def main():
     output_separator = os.getenv('OUTPUT_SEPARATOR')
     prompts_file = os.getenv('PROMPTS_FILE')
     audio_directory = os.getenv('AUDIO_DIRECTORY')  # New environment variable for the audio directory
+    print(f"AUDIO_DIRECTORY: {audio_directory}")
 
     # Set the OpenAI API key
     openai.api_key = openai_api_key
@@ -61,10 +64,12 @@ def main():
     audio_files = [audio_file_name for audio_file_name in os.listdir(audio_directory) if not audio_file_name.endswith('.DS_Store')]
 
     # Process all audio files in the specified directory with progress bar
-    process_files(audio_files, lambda file_name: process_audio_file(file_name, prompts, output_directory, output_separator))
+    def process_function(file_name):
+        return process_audio_file(file_name, prompts, output_directory, output_separator, audio_directory)
+    process_files(audio_files, process_function)
 
 
-def process_audio_file(audio_file_name, prompts, output_directory, output_separator):
+def process_audio_file(audio_file_name, prompts, output_directory, output_separator, audio_directory):
     input_filepath = os.path.join(audio_directory, audio_file_name)
     output_filepath = os.path.join(output_directory, f"{os.path.splitext(audio_file_name)[0]}.txt")
 
@@ -105,3 +110,41 @@ def process_files(file_list, process_function):
             # Update progress bar
             time.sleep(0.1)
     print(f"{successful_files} of {total_files} files successfully processed.")
+if __name__ == "__main__":
+    main()
+
+import openai
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+def process_text(prompt, response, temperature):
+    # Initialize response_text to an empty string
+    response_text = ''
+
+    # Convert response to dictionary and extract transcription text
+    if hasattr(response, 'dict'):
+        response_dict = response.dict()
+        response_text = response_dict.get('text', '') 
+
+    # Get model name from environment variable
+    model_name = os.getenv('MODEL_NAME')
+
+    # Generate text using OpenAI
+    response = openai.ChatCompletion.create(
+        model=model_name,
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": prompt + '\n\n' + response_text}
+        ],
+        temperature=temperature,
+        max_tokens=500,
+    )
+
+    # Extract generated text from OpenAI response
+    generated_text = response['choices'][0]['message']['content'].strip()
+
+    # Return modified text
+    return generated_text
