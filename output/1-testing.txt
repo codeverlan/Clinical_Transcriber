@@ -1,0 +1,31 @@
+{
+  "text": "Date is July 5th. Client identifier is NJ. Client presented with his mother and sister in session. Mother reported 14 consecutive days being free of a bowel accident. She attributed this at least partially to a conversation with the primary care physician that occurred in front of client. This is consistent with clients rapid progress after one meeting with therapist last year. During session client showed the ability to accept therapist praise and mother's praise for progress in preventing bowel movements in his pants. Additionally of significant note, client said that he had to go to the bathroom in session and then indicated that he was able to hold it. He was also able to appeal to mother to assist him with going to the bathroom after he determined that he could not. This appears to be significant progress from whatever avoidance was preventing him from using the toilet appropriately. Spoke with mother regarding referral to GI specialist made by PCP. Plan is for mother to hold off on all pending appointments including with this therapist until it is clear if client needs further intervention. Mother was given this therapist scheduling link and directed to schedule appointments as needed if a regression should occur. This decision is based partly on clients progress after last treatment episode. End of note."
+}\n**********\nProposed Note:
+
+Interventions:
+1. Used CBT techniques to challenge negative thought patterns.
+2. Employed solution-focused techniques to explore client's strengths and resources.
+
+Presentation:
+- No significant risk behaviors or assessment for SI/HI observed.
+- Client reported experiencing increased anxiety since last session.
+- Client mentioned a recent argument with a family member.
+
+Response:
+During the session, the client actively engaged in the interventions. They gained insight into their negative thought patterns and identified their strengths. The client expressed relief and a sense of empowerment. The family member present in the session showed understanding and support.
+
+Plan:
+1. Client will practice CBT techniques daily to challenge negative thoughts.
+2. Therapist will provide additional resources on solution-focused techniques.
+3. Therapy sessions will continue on a weekly basis.
+
+Goals:
+1. Client will improve coping skills to manage anxiety.
+2. Client will enhance communication with family members.
+
+Tasks:
+1. Therapist will research and provide resources on coping skills for anxiety.
+
+Suggestions:
+1. Achieve improved coping skills to manage anxiety by practicing relaxation exercises and engaging in stress-reducing activities.
+2. Achieve enhanced communication with family members by using active listening techniques and expressing feelings assertively.
